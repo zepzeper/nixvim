@@ -16,6 +16,7 @@
     ./tools/dap.nix
     ./tools/gitsigns.nix
     ./tools/highlight-colors.nix
+    ./tools/harpoon.nix
     ./tools/lazy.nix
 		./tools/render-markdown.nix
     ./tools/telescope.nix
