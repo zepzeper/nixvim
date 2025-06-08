@@ -1,6 +1,6 @@
 {
   imports = [
-    ./ui/rose-pine.nix
+    ./appearance/rose-pine.nix
     #./ui/bufferline.nix
     #./ui/dashboard.nix
     #./ui/dropbar.nix
@@ -11,7 +11,7 @@
     #./ui/tagbar.nix
     #./ui/tokyonight.nix
     #./ui/ufo.nix
-    ./ui/web-devicons.nix
+		./appearance/web-devicons.nix
 
     #./editor/lsp.nix
     #./editor/conform.nix
