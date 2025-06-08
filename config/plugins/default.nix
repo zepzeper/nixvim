@@ -3,13 +3,6 @@
     ./ui/rose-pine.nix
     ./ui/dashboard.nix
 		./ui/lualine.nix
-    #./ui/dropbar.nix
-    #./ui/noice.nix
-    #./ui/notify.nix
-    #./ui/nui.nix
-    #./ui/tagbar.nix
-    #./ui/tokyonight.nix
-    #./ui/ufo.nix
 		./ui/web-devicons.nix
 
     ./editor/lsp.nix
@@ -30,10 +23,8 @@
     #./tools/neotree.nix
 		#./tools/render-markdown.nix
     ./tools/telescope.nix
-    #./tools/trouble.nix
-		#./tools/vimtex.nix
-		#./tools/wakatime.nix
-		#./tools/yazi.nix
+    ./tools/trouble.nix
+		./tools/yazi.nix
 
     ./extras/extras.nix
   ];
