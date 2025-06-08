@@ -3,7 +3,9 @@
 		enable = true;
 		enableTelescope = true;
 		settings = {
-			save_on_toggle = true;
+			settings = {
+				save_on_toggle = true;
+			};
 		};
 	};
 
