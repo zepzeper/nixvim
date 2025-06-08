@@ -1,10 +1,9 @@
 {
   imports = [
     ./ui/rose-pine.nix
-    #./ui/bufferline.nix
-    #./ui/dashboard.nix
+    ./ui/dashboard.nix
+		./ui/lualine.nix
     #./ui/dropbar.nix
-    #./ui/lualine.nix
     #./ui/noice.nix
     #./ui/notify.nix
     #./ui/nui.nix
