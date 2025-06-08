@@ -77,26 +77,6 @@
         desc = "Toggle highlighting search";
       };
     }
-    # FullScreen
-    {
-      mode = "n";
-      key = "<leader>fs";
-      action = "<C-w>|";
-      options = {
-        noremap = true;
-        silent = true;
-      };
-    }
-    # ExitFullscreen
-    {
-      mode = "n";
-      key = "<leader>rs";
-      action = "<C-w>=";
-      options = {
-        noremap = true;
-        silent = true;
-      };
-    }
 
     # Tab management
     {

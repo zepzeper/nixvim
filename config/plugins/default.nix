@@ -1,6 +1,6 @@
 {
   imports = [
-    ./appearance/rose-pine.nix
+    ./ui/rose-pine.nix
     #./ui/bufferline.nix
     #./ui/dashboard.nix
     #./ui/dropbar.nix
@@ -11,13 +11,13 @@
     #./ui/tagbar.nix
     #./ui/tokyonight.nix
     #./ui/ufo.nix
-		./appearance/web-devicons.nix
+		./ui/web-devicons.nix
 
-    #./editor/lsp.nix
-    #./editor/conform.nix
-    #./editor/blink.nix
-    #./editor/auto-close.nix
-    #./editor/treesitter
+    ./editor/lsp.nix
+    ./editor/conform.nix
+    ./editor/blink.nix
+    ./editor/auto-close.nix
+    ./editor/treesitter
 
     #./tools/snacks
     #./tools/comment.nix
@@ -34,9 +34,8 @@
     #./tools/trouble.nix
 		#./tools/vimtex.nix
 		#./tools/wakatime.nix
-    #./tools/which-key.nix
 		#./tools/yazi.nix
 
-    #./extras/extras.nix
+    ./extras/extras.nix
   ];
 }
