@@ -11,17 +11,13 @@
     ./editor/auto-close.nix
     ./editor/treesitter
 
-    #./tools/snacks
-    #./tools/comment.nix
-    #./tools/dap.nix
-    #./tools/gitsigns.nix
-    #./tools/highlight-colors.nix
-    #./tools/lazy.nix
-    #./tools/leap.nix
-    #./tools/mini.nix
-    #./tools/navigator.nix
-    #./tools/neotree.nix
-		#./tools/render-markdown.nix
+    ./tools/snacks
+    ./tools/comment.nix
+    ./tools/dap.nix
+    ./tools/gitsigns.nix
+    ./tools/highlight-colors.nix
+    ./tools/lazy.nix
+		./tools/render-markdown.nix
     ./tools/telescope.nix
     ./tools/trouble.nix
 		./tools/yazi.nix
