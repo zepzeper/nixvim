@@ -14,6 +14,7 @@
     ./tools/snacks
     ./tools/comment.nix
     ./tools/dap.nix
+    ./tools/dadbodui.nix
     ./tools/gitsigns.nix
     ./tools/highlight-colors.nix
     ./tools/harpoon.nix
