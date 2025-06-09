@@ -8,7 +8,7 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>db";
+      key = "<leader>tu";
       action = ":DBUIToggle<CR>";
       options.desc = "Toggle database UI";
     }
