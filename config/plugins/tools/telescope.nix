@@ -2,12 +2,14 @@
   plugins = {
     telescope = {
       enable = true;
+			extensions = {
+				ui-select.enable = true;
+				advanced-git-search.enable = true;
+				fzf-native.enable = true;
+				live-grep-args.enable = true;
+			};
       # highlightTheme = "Catppuccin Mocha";
       highlightTheme = "tokyonight";
-      extensions = {
-        fzf-native.enable = true;
-        live-grep-args.enable = true;
-      };
 
       settings.defaults = {
         prompt_prefix = "   ";
@@ -15,6 +17,7 @@
         set_env.COLORTERM = "truecolor";
         file_ignore_patterns = [
           "^.git/"
+          "^vendor/"
           "^.mypy_cache/"
           "^__pycache__/"
           "^output/"
@@ -46,6 +49,17 @@
       mode = "n";
       options.desc = "Find string in cwd";
     }
+		# -----------------------------------------------------------------
+		# Git Integration (from advanced-git-search.nvim)
+		# -----------------------------------------------------------------
+		# This plugin doesn't add keymaps by default, so here is a suggestion:
+		{
+			mode = "n";
+			key = "\<leader>gf";
+			action = "\<cmd>AdvancedGitSearch search_log_content_file\<cr>";
+			options.desc = "Advanced Git Search (commits, files)";
+			
+		}
     {
       key = "<leader>fc";
       action = "<cmd>Telescope grep_string<CR>";

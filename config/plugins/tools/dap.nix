@@ -1,4 +1,8 @@
 {
+	pkgs,
+	...
+}:
+{
   plugins = {
     dap-virtual-text = {
       enable = true;
@@ -9,6 +13,34 @@
 
     dap = {
       enable = true;
+			adapters = {
+				executables.php = {
+					command = "${pkgs.nodejs}/bin/node";
+					args = [
+						"${pkgs.vscode-extensions.xdebug.php-debug}/share/vscode/extensions/xdebug.php-debug/out/phpDebug.js"
+					];
+				};
+			};
+
+			luaConfig.post = ''
+				local dap = require('dap')
+				dap.configurations.php = {
+					{
+						type = "php",
+            request = "launch",
+            name = "Listen for Xdebug (Docker)",
+						log = true,
+						port = 9003,
+            pathMappings = {
+							["/var/www/html"] = vim.fn.getcwd() .. "/html/",
+            },
+					},
+				}
+
+
+
+			'';
+
       signs = {
         dapBreakpoint = {
           text = " ";
@@ -128,5 +160,38 @@
       };
     };
   };
+
+  # Lua automation for the UI
+  extraConfigLua = ''
+    local dap = require('dap')
+    local dapui = require('dapui')
+
+    dap.listeners.after.event_initialized["dapui_config"] = function()
+      dapui.open()
+    end
+    dap.listeners.before.event_terminated["dapui_config"] = function()
+      dapui.close()
+    end
+    dap.listeners.before.event_exited["dapui_config"] = function()
+      dapui.close()
+    end
+
+		do
+			function _G.open_dynamic_eval()
+				local dap = require('dap')
+				local width = math.floor(vim.o.columns * 0.6)
+				local height = math.floor(vim.o.lines * 0.3)
+				require('dapui').eval(nil, {
+						width = width,
+						height = height,
+						enter = true,
+						position = "center",
+						})
+			end
+
+			vim.api.nvim_set_keymap('n', '<C-k>', [[<Cmd>lua _G.open_dynamic_eval()<CR>]], { noremap = true, silent = true })
+		end
+
+  '';
 
 }
