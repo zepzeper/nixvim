@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  enableMan = false;
+  enableMan = true;
   imports = [
     ./options.nix
     ./keymaps.nix

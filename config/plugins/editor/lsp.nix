@@ -2,6 +2,7 @@
   self,
   pkgs,
   lib,
+  config, 
   ...
 }:
 {
@@ -37,24 +38,18 @@
         };
         rust_analyzer = {
           enable = true;
-					installCargo = true;
-					installRustc = true;
+          installCargo = true;
+          installRustc = true;
         };
         gopls = {
           enable = true;
         };
         phpactor = {
           enable = true;
-					settings = {
-						"composer.bin" = "${lib.getExe pkgs.php84Packages.composer}";
-						"language_server_diagnostics.enabled" = true;
-						"language_server_completion.enabled" = true;
-						"language_server_completion.mode" = "local";
-						"language_server_code_action.enabled" = true;
-						"language_server_hover.enabled" = true;
-						"language_server_signature_help.enabled" = true;
-					};
-        };
+          settings = {
+            "composer.bin" = "${lib.getExe pkgs.php84Packages.composer}";
+          };
+        }; 
         jsonls = {
           enable = true;
         };
@@ -90,65 +85,65 @@
       };
 
       # LSP keymaps
-			keymaps = {
-				silent = true;
-				lspBuf = {
-					gd = {
-						action = "definition";
-						desc = "Show LSP definitions";
-					};
-					gR = {
-						action = "references";
-						desc = "Show LSP references";
-					};
-					gD = {
-						action = "declaration";
-						desc = "Go to declaration";
-					};
-					gi = {
-						action = "implementation";
-						desc = "Show LSP implementations";
-					};
-					gt = {
-						action = "type_definition";
-						desc = "Show LSP type definitions";
-					};
-					K = {
-						action = "hover";
-						desc = "Show documentation for what is under cursor";
-					};
-					"<leader>ca" = {
-						action = "code_action";
-						desc = "See available code actions";
-					};
-					"<leader>rn" = {
-						action = "rename";
-						desc = "Smart rename";
-					};
-					"<leader>cw" = {
-						action = "workspace_symbol";
-						desc = "Workspace Symbol";
-					};
-				};
-				diagnostic = {
-					"<leader>e" = {
-						action = "open_float";
-						desc = "Show line diagnostics";
-					};
-					"<leader>E" = {
-						action = "setloclist";
-						desc = "Show buffer diagnostics";
-					};
-					"[d" = {
-						action = "goto_prev";
-						desc = "Go to previous diagnostic";
-					};
-					"]d" = {
-						action = "goto_next";
-						desc = "Go to next diagnostic";
-					};
-				};
-			};
+      keymaps = {
+        silent = true;
+        lspBuf = {
+          gd = {
+            action = "definition";
+            desc = "Show LSP definitions";
+          };
+          gR = {
+            action = "references";
+            desc = "Show LSP references";
+          };
+          gD = {
+            action = "declaration";
+            desc = "Go to declaration";
+          };
+          gi = {
+            action = "implementation";
+            desc = "Show LSP implementations";
+          };
+          gt = {
+            action = "type_definition";
+            desc = "Show LSP type definitions";
+          };
+          K = {
+            action = "hover";
+            desc = "Show documentation for what is under cursor";
+          };
+          "<leader>ca" = {
+            action = "code_action";
+            desc = "See available code actions";
+          };
+          "<leader>rn" = {
+            action = "rename";
+            desc = "Smart rename";
+          };
+          "<leader>cw" = {
+            action = "workspace_symbol";
+            desc = "Workspace Symbol";
+          };
+        };
+        diagnostic = {
+          "<leader>e" = {
+            action = "open_float";
+            desc = "Show line diagnostics";
+          };
+          "<leader>E" = {
+            action = "setloclist";
+            desc = "Show buffer diagnostics";
+          };
+          "[d" = {
+            action = "goto_prev";
+            desc = "Go to previous diagnostic";
+          };
+          "]d" = {
+            action = "goto_next";
+            desc = "Go to next diagnostic";
+          };
+        };
+      };
     };
   };
 
