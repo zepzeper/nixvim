@@ -8,8 +8,8 @@
     number = true;         # shows absolute line number on cursor line (when relative number is on)
     
     # Tabs & indentation
-    tabstop = 2;       # 2 spaces for tabs (prettier default)
-    shiftwidth = 2;    # 2 spaces for indent width
+    tabstop = 4;       # 2 spaces for tabs (prettier default)
+    shiftwidth = 4;    # 2 spaces for indent width
     expandtab = false;  # expand tab to spaces
     autoindent = true; # copy indent from current line when starting new one
     

@@ -27,13 +27,10 @@
 				dap.configurations.php = {
 					{
 						type = "php",
-            request = "launch",
-            name = "Listen for Xdebug (Docker)",
+						request = "launch",
+						name = "Listen for Xdebug",
 						log = true,
 						port = 9003,
-            pathMappings = {
-							["/var/www/html"] = vim.fn.getcwd() .. "/html/",
-            },
 					},
 				}
 
